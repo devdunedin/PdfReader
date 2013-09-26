@@ -36,10 +36,17 @@
     
     [_ReaderFrontPage setDocument:pdfDoc];
     [_PdfThumbnail setPDFView:_ReaderFrontPage];
-  
+    [_pageNumber setIntegerValue:[[_ReaderFrontPage document] indexForPage:[_ReaderFrontPage currentPage]]+1];
+    [[NSNotificationCenter defaultCenter]
+    addObserver:self
+selector:@selector(pageChanger:)
+name:PDFViewPageChangedNotification
+     object:nil];
 }
 
 - (void) awakeFromNib{
+    
+    
 }
 
 - (IBAction)goBack:(id)sender {
@@ -83,6 +90,14 @@
      [_ReaderFrontPage setDisplayMode:kPDFDisplayTwoUpContinuous];
 }
 
+- (IBAction)getPage:(id)sender {
+}
+
+- (IBAction)searchText:(id)sender {
+//    if ([[_ReaderFrontPage] isFinding])
+    
+}
+
 
 
 - (IBAction)zoomIn:(id)sender {
@@ -90,7 +105,26 @@
     [_ReaderFrontPage zoomIn:sender];
 }
 
-
+-(void)controlTextDidEndEditing:(NSNotification *)notification{
+     int page_count = [pdfDoc pageCount];
+    
+    if ([_pageNumber intValue] <= 0) {
+      
+    }
+    
+    if(([_pageNumber intValue]-1 > 0)){
+    
+    if([_pageNumber intValue]-1 < page_count){
+      PDFPage *pageValueEntered = [[_ReaderFrontPage document] pageAtIndex:[_pageNumber intValue]-1];
+    
+       
+    
+      
+       [_ReaderFrontPage goToPage:pageValueEntered];
+    }
+    }
+    
+}
 
 
 
@@ -125,6 +159,11 @@
     
     return YES;
 }
+
+-(void)pageChanger:(NSNotification *)notification{
+    
+    [_pageNumber setIntegerValue:[[_ReaderFrontPage document] indexForPage:[_ReaderFrontPage currentPage]]+1];
+   }
 
 
 

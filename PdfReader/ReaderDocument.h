@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import <Quartz/Quartz.h>
 
-@interface ReaderDocument : NSDocument
+@interface ReaderDocument : NSDocument <NSTextFieldDelegate>
 
 
 //@property (assign) IBOutlet NSWindow *window;
@@ -17,8 +17,9 @@
 
 @property (weak) IBOutlet PDFThumbnailView *PdfThumbnail;
 
-@property (weak) IBOutlet NSComboBox *PageCounter;
-@property (weak) IBOutlet NSComboBoxCell *currentPageNumber;
+@property (weak) IBOutlet NSTextField *pageNumber;
+
+
 
 
 - (IBAction)goBack:(id)sender;
@@ -33,6 +34,8 @@
 - (IBAction)singleContinuousView:(id)sender;
 - (IBAction)doubleView:(id)sender;
 - (IBAction)doubleContinuousView:(id)sender;
+- (IBAction)getPage:(id)sender;
 
+- (IBAction)searchText:(id)sender;
 
 @end
