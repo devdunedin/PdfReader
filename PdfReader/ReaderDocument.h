@@ -10,8 +10,11 @@
 #import <Quartz/Quartz.h>
 
 @interface ReaderDocument : NSDocument <NSTextFieldDelegate>
-
-
+{
+NSMutableArray *searchResults;
+NSString *searchValue;
+int selectionPos;
+}
 //@property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet PDFView *ReaderFrontPage;
 
@@ -34,7 +37,7 @@
 - (IBAction)singleContinuousView:(id)sender;
 - (IBAction)doubleView:(id)sender;
 - (IBAction)doubleContinuousView:(id)sender;
-- (IBAction)getPage:(id)sender;
+- (IBAction) doFind: (id) sender ;
 
 - (IBAction)searchText:(id)sender;
 

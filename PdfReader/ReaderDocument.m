@@ -90,8 +90,7 @@ name:PDFViewPageChangedNotification
      [_ReaderFrontPage setDisplayMode:kPDFDisplayTwoUpContinuous];
 }
 
-- (IBAction)getPage:(id)sender {
-}
+
 
 - (IBAction)searchText:(id)sender {
 //    if ([[_ReaderFrontPage] isFinding])
@@ -117,15 +116,36 @@ name:PDFViewPageChangedNotification
     if([_pageNumber intValue]-1 < page_count){
       PDFPage *pageValueEntered = [[_ReaderFrontPage document] pageAtIndex:[_pageNumber intValue]-1];
     
-       
-    
-      
        [_ReaderFrontPage goToPage:pageValueEntered];
     }
     }
     
 }
-
+- (IBAction) doFind: (id) sender {
+    
+    
+    if ([[self.ReaderFrontPage document] isFinding]) {
+        [[self.ReaderFrontPage document] cancelFindString];
+    }
+    if (![[sender stringValue] isEqualToString:searchValue]) {
+        searchResults = NULL;
+    }
+    if (searchResults == NULL) {
+        searchResults = [NSMutableArray arrayWithCapacity: 10];
+        searchValue = [sender stringValue];
+        selectionPos = 0;
+    }
+    NSArray *selection = [[self.ReaderFrontPage document] findString: [sender stringValue] withOptions:NSCaseInsensitiveSearch];
+    
+    if (selection.count != 0) {
+        [self.ReaderFrontPage setCurrentSelection:selection[selectionPos]];
+        selectionPos++;
+        if (selectionPos > selection.count - 1) {
+            selectionPos = 0; }
+        [self.ReaderFrontPage scrollSelectionToVisible:sender];
+    }
+    
+}
 
 
 
