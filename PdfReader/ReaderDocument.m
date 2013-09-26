@@ -39,6 +39,9 @@
   
 }
 
+- (void) awakeFromNib{
+}
+
 - (IBAction)goBack:(id)sender {
     if([_ReaderFrontPage canGoToPreviousPage]){
         [_ReaderFrontPage goToPreviousPage:sender];
@@ -62,21 +65,23 @@
     [_ReaderFrontPage setAutoScales:YES];
 }
 
-- (IBAction)kindOfView:(id)sender {
-    if([_viewType indexOfSelectedItem] == 0){
-        [_ReaderFrontPage setDisplayMode:kPDFDisplaySinglePage];
-    }
-//    else if([_viewType indexOfSelectedItem] == 1){
-//        [_ReaderFrontPage setDisplayMode:kPDFDisplaySinglePageContinuous];
-//    }
-//    else if([_viewType indexOfSelectedItem] == 2){
-//        [_ReaderFrontPage setDisplayMode:kPDFDisplayTwoUp];
-//    }
-//    else if([_viewType indexOfSelectedItem] == 3){
-//        [_ReaderFrontPage setDisplayMode:kPDFDisplayTwoUpContinuous];
-//    }
 
-    }
+
+- (IBAction)singleView:(id)sender {
+    [_ReaderFrontPage setDisplayMode:kPDFDisplaySinglePage];
+}
+
+- (IBAction)singleContinuousView:(id)sender {
+    [_ReaderFrontPage setDisplayMode:kPDFDisplaySinglePageContinuous];
+}
+
+- (IBAction)doubleView:(id)sender {
+    [_ReaderFrontPage setDisplayMode:kPDFDisplayTwoUp];
+}
+
+- (IBAction)doubleContinuousView:(id)sender {
+     [_ReaderFrontPage setDisplayMode:kPDFDisplayTwoUpContinuous];
+}
 
 
 

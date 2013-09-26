@@ -19,7 +19,7 @@
 
 @property (weak) IBOutlet NSComboBox *PageCounter;
 @property (weak) IBOutlet NSComboBoxCell *currentPageNumber;
-@property (weak) IBOutlet NSComboBoxCell *viewType;
+
 
 - (IBAction)goBack:(id)sender;
 - (IBAction)goFront:(id)sender;
@@ -28,6 +28,11 @@
 - (IBAction)zoomOut:(id)sender;
 
 - (IBAction)zoomToFit:(id)sender;
-- (IBAction)kindOfView:(id)sender;
+
+- (IBAction)singleView:(id)sender;
+- (IBAction)singleContinuousView:(id)sender;
+- (IBAction)doubleView:(id)sender;
+- (IBAction)doubleContinuousView:(id)sender;
+
 
 @end
