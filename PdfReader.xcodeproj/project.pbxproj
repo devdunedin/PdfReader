@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F58277B517F3E7D100A1951B /* arrow_two_head_icon&48.png in Resources */ = {isa = PBXBuildFile; fileRef = F58277B417F3E7D100A1951B /* arrow_two_head_icon&48.png */; };
 		F5F5C2A517F3DA3500BF0F38 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5F5C2A417F3DA3500BF0F38 /* Cocoa.framework */; };
 		F5F5C2AF17F3DA3600BF0F38 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F5F5C2AD17F3DA3600BF0F38 /* InfoPlist.strings */; };
 		F5F5C2B117F3DA3600BF0F38 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F5C2B017F3DA3600BF0F38 /* main.m */; };
@@ -14,9 +15,15 @@
 		F5F5C2B817F3DA3700BF0F38 /* ReaderDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F5C2B717F3DA3700BF0F38 /* ReaderDocument.m */; };
 		F5F5C2BB17F3DA3700BF0F38 /* ReaderDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5F5C2B917F3DA3700BF0F38 /* ReaderDocument.xib */; };
 		F5F5C2BE17F3DA3800BF0F38 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5F5C2BC17F3DA3700BF0F38 /* MainMenu.xib */; };
+		F5F5C2C517F3DA6400BF0F38 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5F5C2C417F3DA6400BF0F38 /* Quartz.framework */; };
+		F5F5C2C717F3DFA400BF0F38 /* zoom_icon&48.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F5C2C617F3DFA400BF0F38 /* zoom_icon&48.png */; };
+		F5F5C2C917F3DFD800BF0F38 /* zoom_icon&24.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F5C2C817F3DFD800BF0F38 /* zoom_icon&24.png */; };
+		F5F5C2CC17F3DFF400BF0F38 /* arrow_left_icon&32.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F5C2CA17F3DFF400BF0F38 /* arrow_left_icon&32.png */; };
+		F5F5C2CD17F3DFF400BF0F38 /* arrow_right_icon&32.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F5C2CB17F3DFF400BF0F38 /* arrow_right_icon&32.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F58277B417F3E7D100A1951B /* arrow_two_head_icon&48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow_two_head_icon&48.png"; path = "../../../../Downloads/cc/black/png/arrow_two_head_icon&48.png"; sourceTree = "<group>"; };
 		F5F5C2A117F3DA3500BF0F38 /* PdfReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PdfReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5F5C2A417F3DA3500BF0F38 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		F5F5C2A717F3DA3500BF0F38 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -31,6 +38,11 @@
 		F5F5C2B717F3DA3700BF0F38 /* ReaderDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReaderDocument.m; sourceTree = "<group>"; };
 		F5F5C2BA17F3DA3700BF0F38 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ReaderDocument.xib; sourceTree = "<group>"; };
 		F5F5C2BD17F3DA3800BF0F38 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		F5F5C2C417F3DA6400BF0F38 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		F5F5C2C617F3DFA400BF0F38 /* zoom_icon&48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zoom_icon&48.png"; path = "../../../../Downloads/cc/black/png/zoom_icon&48.png"; sourceTree = "<group>"; };
+		F5F5C2C817F3DFD800BF0F38 /* zoom_icon&24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zoom_icon&24.png"; path = "../../../../Downloads/cc/black/png/zoom_icon&24.png"; sourceTree = "<group>"; };
+		F5F5C2CA17F3DFF400BF0F38 /* arrow_left_icon&32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow_left_icon&32.png"; path = "../../../../Downloads/cc/black/png/arrow_left_icon&32.png"; sourceTree = "<group>"; };
+		F5F5C2CB17F3DFF400BF0F38 /* arrow_right_icon&32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow_right_icon&32.png"; path = "../../../../Downloads/cc/black/png/arrow_right_icon&32.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5F5C2C517F3DA6400BF0F38 /* Quartz.framework in Frameworks */,
 				F5F5C2A517F3DA3500BF0F38 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,6 +61,7 @@
 		F5F5C29817F3DA3500BF0F38 = {
 			isa = PBXGroup;
 			children = (
+				F5F5C2C417F3DA6400BF0F38 /* Quartz.framework */,
 				F5F5C2AA17F3DA3500BF0F38 /* PdfReader */,
 				F5F5C2A317F3DA3500BF0F38 /* Frameworks */,
 				F5F5C2A217F3DA3500BF0F38 /* Products */,
@@ -86,7 +100,12 @@
 			children = (
 				F5F5C2B617F3DA3700BF0F38 /* ReaderDocument.h */,
 				F5F5C2B717F3DA3700BF0F38 /* ReaderDocument.m */,
+				F58277B417F3E7D100A1951B /* arrow_two_head_icon&48.png */,
 				F5F5C2B917F3DA3700BF0F38 /* ReaderDocument.xib */,
+				F5F5C2CA17F3DFF400BF0F38 /* arrow_left_icon&32.png */,
+				F5F5C2CB17F3DFF400BF0F38 /* arrow_right_icon&32.png */,
+				F5F5C2C817F3DFD800BF0F38 /* zoom_icon&24.png */,
+				F5F5C2C617F3DFA400BF0F38 /* zoom_icon&48.png */,
 				F5F5C2BC17F3DA3700BF0F38 /* MainMenu.xib */,
 				F5F5C2AB17F3DA3600BF0F38 /* Supporting Files */,
 			);
@@ -161,6 +180,11 @@
 				F5F5C2B517F3DA3700BF0F38 /* Credits.rtf in Resources */,
 				F5F5C2BB17F3DA3700BF0F38 /* ReaderDocument.xib in Resources */,
 				F5F5C2BE17F3DA3800BF0F38 /* MainMenu.xib in Resources */,
+				F5F5C2C717F3DFA400BF0F38 /* zoom_icon&48.png in Resources */,
+				F5F5C2C917F3DFD800BF0F38 /* zoom_icon&24.png in Resources */,
+				F5F5C2CC17F3DFF400BF0F38 /* arrow_left_icon&32.png in Resources */,
+				F5F5C2CD17F3DFF400BF0F38 /* arrow_right_icon&32.png in Resources */,
+				F58277B517F3E7D100A1951B /* arrow_two_head_icon&48.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +340,7 @@
 				F5F5C2C317F3DA3800BF0F38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
