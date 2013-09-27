@@ -37,7 +37,7 @@
     [_ReaderFrontPage setDocument:pdfDoc];
     [_PdfThumbnail setPDFView:_ReaderFrontPage];
     [_pageNumber setIntegerValue:[[_ReaderFrontPage document] indexForPage:[_ReaderFrontPage currentPage]]+1];
-     [_ReaderFrontPage setDisplayMode:kPDFDisplaySinglePageContinuous];
+     
     [[NSNotificationCenter defaultCenter]
     addObserver:self
    selector:@selector(pageChanger:)
@@ -209,9 +209,6 @@
 
 
 
-- (IBAction)goFullScreen:(id)sender {
-   // [_ReaderFrontPage go]
-}
 @end
 
 
