@@ -28,6 +28,9 @@ int selectionPos;
 - (IBAction)goBack:(id)sender;
 - (IBAction)goFront:(id)sender;
 - (IBAction)zoomIn:(id)sender;
+- (IBAction)thePageYouWereBefore:(id)sender;
+
+- (IBAction)theLastPageYouWere:(id)sender;
 
 - (IBAction)zoomOut:(id)sender;
 
@@ -39,6 +42,9 @@ int selectionPos;
 - (IBAction)doubleContinuousView:(id)sender;
 - (IBAction) doFind: (id) sender ;
 
-- (IBAction)searchText:(id)sender;
+- (IBAction)goHome:(id)sender;
+- (IBAction)goEnd:(id)sender;
+
+- (IBAction)goFullScreen:(id)sender;
 
 @end

@@ -37,10 +37,11 @@
     [_ReaderFrontPage setDocument:pdfDoc];
     [_PdfThumbnail setPDFView:_ReaderFrontPage];
     [_pageNumber setIntegerValue:[[_ReaderFrontPage document] indexForPage:[_ReaderFrontPage currentPage]]+1];
+     [_ReaderFrontPage setDisplayMode:kPDFDisplaySinglePageContinuous];
     [[NSNotificationCenter defaultCenter]
     addObserver:self
-selector:@selector(pageChanger:)
-name:PDFViewPageChangedNotification
+   selector:@selector(pageChanger:)
+   name:PDFViewPageChangedNotification
      object:nil];
 }
 
@@ -92,16 +93,25 @@ name:PDFViewPageChangedNotification
 
 
 
-- (IBAction)searchText:(id)sender {
-//    if ([[_ReaderFrontPage] isFinding])
-    
-}
 
 
 
 - (IBAction)zoomIn:(id)sender {
     
     [_ReaderFrontPage zoomIn:sender];
+}
+
+- (IBAction)thePageYouWereBefore:(id)sender {
+    if([_ReaderFrontPage canGoBack]){
+        [_ReaderFrontPage goBack:sender];
+    }
+}
+
+- (IBAction)theLastPageYouWere:(id)sender {
+    if([_ReaderFrontPage canGoForward]){
+        [_ReaderFrontPage goForward:sender];
+    }
+    
 }
 
 -(void)controlTextDidEndEditing:(NSNotification *)notification{
@@ -147,6 +157,18 @@ name:PDFViewPageChangedNotification
     
 }
 
+- (IBAction)goHome:(id)sender {
+    if([_ReaderFrontPage canGoToFirstPage]){
+        [_ReaderFrontPage goToFirstPage:sender];
+    }
+}
+
+- (IBAction)goEnd:(id)sender {
+    if([_ReaderFrontPage canGoToLastPage]){
+        [_ReaderFrontPage goToLastPage:sender];
+    }
+}
+
 
 
 
@@ -187,6 +209,9 @@ name:PDFViewPageChangedNotification
 
 
 
+- (IBAction)goFullScreen:(id)sender {
+   // [_ReaderFrontPage go]
+}
 @end
 
 
