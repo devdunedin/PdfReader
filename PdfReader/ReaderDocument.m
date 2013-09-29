@@ -35,7 +35,7 @@
    
     
     [_ReaderFrontPage setDocument:pdfDoc];
-    [_PdfThumbnail setPDFView:_ReaderFrontPage];
+       [_PdfThumbnail setPDFView:_ReaderFrontPage];
     [_pageNumber setIntegerValue:[[_ReaderFrontPage document] indexForPage:[_ReaderFrontPage currentPage]]+1];
      
     [[NSNotificationCenter defaultCenter]
@@ -168,6 +168,10 @@
         [_ReaderFrontPage goToLastPage:sender];
     }
 }
+
+//- (IBAction)goFullScreen:(id)sender {
+//    [_ReaderFrontPage [[[PdfView alloc]initWithFrame:self.view.bounds]autorelease];
+//}
 
 
 
