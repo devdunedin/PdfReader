@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import <Quartz/Quartz.h>
 
-@interface ReaderDocument : NSDocument <NSTextFieldDelegate, NSApplicationDelegate>
+@interface ReaderDocument : NSDocument <NSTextFieldDelegate/*, NSApplicationDelegate*/>
 {
 NSMutableArray *searchResults;
 NSString *searchValue;
@@ -22,7 +22,7 @@ int selectionPos;
 
 @property (weak) IBOutlet NSTextField *pageNumber;
 
-@property (weak) IBOutlet NSWindow *splashScreen;
+//@property (weak) IBOutlet NSWindow *splashScreen;
 
 
 
