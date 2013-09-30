@@ -9,11 +9,11 @@
 #import <Cocoa/Cocoa.h>
 #import <Quartz/Quartz.h>
 
-@interface ReaderDocument : NSDocument <NSTextFieldDelegate/*, NSApplicationDelegate*/>
+@interface ReaderDocument : NSDocument <NSTextFieldDelegate>
 {
-NSMutableArray *searchResults;
-NSString *searchValue;
-int selectionPos;
+    NSMutableArray *searchResults;
+    NSString *searchValue;
+    int selectionPos;
 }
 //@property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet PDFView *ReaderFrontPage;
@@ -22,7 +22,6 @@ int selectionPos;
 
 @property (weak) IBOutlet NSTextField *pageNumber;
 
-//@property (weak) IBOutlet NSWindow *splashScreen;
 
 
 

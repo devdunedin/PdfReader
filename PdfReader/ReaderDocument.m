@@ -10,7 +10,7 @@
 #import <Quartz/Quartz.h>
 
 @implementation ReaderDocument
- PDFDocument *pdfDoc;
+PDFDocument *pdfDoc;
 
 - (id)init
 {
@@ -21,42 +21,6 @@
     return self;
 }
 
-//
-
-
-- (void)applicationWillFinishLaunching:(NSNotification *)aNotification{
-
-
-  //  [_splashScreen center];
-   [NSTimer scheduledTimerWithTimeInterval:1.5
-                                     target:self
-                                   selector:@selector(targetMethod:)
-                                   userInfo:nil
-                                    repeats:NO];
-}
-
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
-    // Initialise the array for timer windows
-    // pdfWindows = [[NSMutableArray alloc] init];
-    
-    // Create a new window at startup
-    // [self newPDFWindow: self];
-    
-    
-    
-    
-}
-
-
--(void)targetMethod: (NSNotification *) notification
-{
-   // [_splashScreen close];
-    
-
-
-}
-//
 - (NSString *)windowNibName
 {
     // Override returning the nib file name of the document
@@ -68,16 +32,16 @@
 {
     [super windowControllerDidLoadNib:aController];
     // Add any code here that needs to be executed once the windowController has loaded the document's window.
-   
+    
     
     [_ReaderFrontPage setDocument:pdfDoc];
-       [_PdfThumbnail setPDFView:_ReaderFrontPage];
+    [_PdfThumbnail setPDFView:_ReaderFrontPage];
     [_pageNumber setIntegerValue:[[_ReaderFrontPage document] indexForPage:[_ReaderFrontPage currentPage]]+1];
-     
+    
     [[NSNotificationCenter defaultCenter]
-    addObserver:self
-   selector:@selector(pageChanger:)
-   name:PDFViewPageChangedNotification
+     addObserver:self
+     selector:@selector(pageChanger:)
+     name:PDFViewPageChangedNotification
      object:nil];
 }
 
@@ -102,7 +66,7 @@
 - (IBAction)zoomOut:(id)sender {
     
     [_ReaderFrontPage zoomOut:sender];
-
+    
 }
 
 - (IBAction)zoomToFit:(id)sender {
@@ -124,7 +88,7 @@
 }
 
 - (IBAction)doubleContinuousView:(id)sender {
-     [_ReaderFrontPage setDisplayMode:kPDFDisplayTwoUpContinuous];
+    [_ReaderFrontPage setDisplayMode:kPDFDisplayTwoUpContinuous];
 }
 
 
@@ -151,19 +115,19 @@
 }
 
 -(void)controlTextDidEndEditing:(NSNotification *)notification{
-     int page_count = [pdfDoc pageCount];
+    int page_count = [pdfDoc pageCount];
     
     if ([_pageNumber intValue] <= 0) {
-      
+        
     }
     
     if(([_pageNumber intValue]-1 > 0)){
-    
-    if([_pageNumber intValue]-1 < page_count){
-      PDFPage *pageValueEntered = [[_ReaderFrontPage document] pageAtIndex:[_pageNumber intValue]-1];
-    
-       [_ReaderFrontPage goToPage:pageValueEntered];
-    }
+        
+        if([_pageNumber intValue]-1 < page_count){
+            PDFPage *pageValueEntered = [[_ReaderFrontPage document] pageAtIndex:[_pageNumber intValue]-1];
+            
+            [_ReaderFrontPage goToPage:pageValueEntered];
+        }
     }
     
 }
@@ -236,7 +200,7 @@
     // Insert code here to read your document from the given data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning NO.
     // You can also choose to override -readFromFileWrapper:ofType:error: or -readFromURL:ofType:error: instead.
     // If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
-   //OPen initWithData: data
+    //OPen initWithData: data
     pdfDoc = [[PDFDocument alloc] initWithData: data];
     
     return YES;
@@ -245,7 +209,7 @@
 -(void)pageChanger:(NSNotification *)notification{
     
     [_pageNumber setIntegerValue:[[_ReaderFrontPage document] indexForPage:[_ReaderFrontPage currentPage]]+1];
-   }
+}
 
 
 
