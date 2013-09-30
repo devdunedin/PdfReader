@@ -21,6 +21,42 @@
     return self;
 }
 
+//
+
+
+- (void)applicationWillFinishLaunching:(NSNotification *)aNotification{
+
+
+  //  [_splashScreen center];
+   [NSTimer scheduledTimerWithTimeInterval:1.5
+                                     target:self
+                                   selector:@selector(targetMethod:)
+                                   userInfo:nil
+                                    repeats:NO];
+}
+
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+{
+    // Initialise the array for timer windows
+    // pdfWindows = [[NSMutableArray alloc] init];
+    
+    // Create a new window at startup
+    // [self newPDFWindow: self];
+    
+    
+    
+    
+}
+
+
+-(void)targetMethod: (NSNotification *) notification
+{
+   // [_splashScreen close];
+    
+
+
+}
+//
 - (NSString *)windowNibName
 {
     // Override returning the nib file name of the document
