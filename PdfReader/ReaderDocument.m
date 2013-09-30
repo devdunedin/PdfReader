@@ -16,22 +16,6 @@ PDFDocument *pdfDoc;
 
 
 
-- (void)applicationWillFinishLaunching:(NSNotification *)aNotification {
-    
-   [_splashScreen orderFront:self ];
-    
-}
-
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    
-    // hide the about box after one second.
-    [NSTimer scheduledTimerWithTimeInterval: 3.0f
-                                     target:self
-                                   selector:@selector(closeSplashBox:)
-                                   userInfo:self
-                                    repeats:false];
-    
-}
 
 
 - (id)init
@@ -52,6 +36,7 @@ PDFDocument *pdfDoc;
 
 - (void)windowControllerDidLoadNib:(NSWindowController *)aController
 {
+      
     [super windowControllerDidLoadNib:aController];
     // Add any code here that needs to be executed once the windowController has loaded the document's window.
     
@@ -192,7 +177,10 @@ PDFDocument *pdfDoc;
 }
 
 - (IBAction)goFullScreen:(id)sender {
+     [self.toolbar setVisible:NO];
+    [self.PdfThumbnail setHidden:YES];
        [_ReaderFrontPage setFrame:[[NSScreen mainScreen] frame]];
+   
 }
 
 
@@ -232,8 +220,6 @@ PDFDocument *pdfDoc;
     
     [_pageNumber setIntegerValue:[[_ReaderFrontPage document] indexForPage:[_ReaderFrontPage currentPage]]+1];
 }
-
-
 
 @end
 

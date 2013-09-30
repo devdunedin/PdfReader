@@ -10,12 +10,12 @@
 #import <Quartz/Quartz.h>
 
 
-@interface ReaderDocument : NSDocument <NSTextFieldDelegate, NSObject>
+@interface ReaderDocument : NSDocument <NSTextFieldDelegate>
 {
     NSMutableArray *searchResults;
     NSString *searchValue;
     int selectionPos;
-    IBOutlet NSWindow *_splashScreen;
+  //  IBOutlet NSWindow *_splashScreen;
     
 }
 
@@ -27,6 +27,9 @@
 @property (weak) IBOutlet PDFThumbnailView *PdfThumbnail;
 
 @property (weak) IBOutlet NSTextField *pageNumber;
+
+@property (weak) IBOutlet NSToolbar *toolbar;
+
 
 
 
