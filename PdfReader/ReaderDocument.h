@@ -9,12 +9,18 @@
 #import <Cocoa/Cocoa.h>
 #import <Quartz/Quartz.h>
 
-@interface ReaderDocument : NSDocument <NSTextFieldDelegate>
+
+@interface ReaderDocument : NSDocument <NSTextFieldDelegate, NSObject>
 {
     NSMutableArray *searchResults;
     NSString *searchValue;
     int selectionPos;
+    IBOutlet NSWindow *_splashScreen;
+    
 }
+
+
+
 //@property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet PDFView *ReaderFrontPage;
 
@@ -45,7 +51,7 @@
 - (IBAction)goHome:(id)sender;
 - (IBAction)goEnd:(id)sender;
 
-//- (IBAction)goFullScreen:(id)sender;
+- (IBAction)goFullScreen:(id)sender;
 
 
 @end

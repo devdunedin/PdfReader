@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F547EB1817F926A100A97657 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F547EB1717F926A100A97657 /* MainMenu.xib */; };
 		F58277B517F3E7D100A1951B /* arrow_two_head_icon&48.png in Resources */ = {isa = PBXBuildFile; fileRef = F58277B417F3E7D100A1951B /* arrow_two_head_icon&48.png */; };
 		F594A9FB17F8E3E200CDBFDC /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = F594A9FA17F8E3E200CDBFDC /* icon.icns */; };
 		F59CC5F417F510C300671BC3 /* arrow_l_icon&48.png in Resources */ = {isa = PBXBuildFile; fileRef = F59CC5F217F510C300671BC3 /* arrow_l_icon&48.png */; };
@@ -18,7 +19,6 @@
 		F5F5C2B517F3DA3700BF0F38 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = F5F5C2B317F3DA3700BF0F38 /* Credits.rtf */; };
 		F5F5C2B817F3DA3700BF0F38 /* ReaderDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F5C2B717F3DA3700BF0F38 /* ReaderDocument.m */; };
 		F5F5C2BB17F3DA3700BF0F38 /* ReaderDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5F5C2B917F3DA3700BF0F38 /* ReaderDocument.xib */; };
-		F5F5C2BE17F3DA3800BF0F38 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5F5C2BC17F3DA3700BF0F38 /* MainMenu.xib */; };
 		F5F5C2C517F3DA6400BF0F38 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5F5C2C417F3DA6400BF0F38 /* Quartz.framework */; };
 		F5F5C2C717F3DFA400BF0F38 /* zoom_icon&48.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F5C2C617F3DFA400BF0F38 /* zoom_icon&48.png */; };
 		F5F5C2C917F3DFD800BF0F38 /* zoom_icon&24.png in Resources */ = {isa = PBXBuildFile; fileRef = F5F5C2C817F3DFD800BF0F38 /* zoom_icon&24.png */; };
@@ -27,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F547EB1717F926A100A97657 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainMenu.xib; path = ../../../../.Trash/MainMenu.xib; sourceTree = "<group>"; };
 		F58277B417F3E7D100A1951B /* arrow_two_head_icon&48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow_two_head_icon&48.png"; path = "../../../../Downloads/cc/black/png/arrow_two_head_icon&48.png"; sourceTree = "<group>"; };
 		F594A9FA17F8E3E200CDBFDC /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		F59CC5F217F510C300671BC3 /* arrow_l_icon&48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow_l_icon&48.png"; path = "../../../../Downloads/cc/black/png/arrow_l_icon&48.png"; sourceTree = "<group>"; };
@@ -45,7 +46,6 @@
 		F5F5C2B617F3DA3700BF0F38 /* ReaderDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReaderDocument.h; sourceTree = "<group>"; };
 		F5F5C2B717F3DA3700BF0F38 /* ReaderDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReaderDocument.m; sourceTree = "<group>"; };
 		F5F5C2BA17F3DA3700BF0F38 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ReaderDocument.xib; sourceTree = "<group>"; };
-		F5F5C2BD17F3DA3800BF0F38 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		F5F5C2C417F3DA6400BF0F38 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		F5F5C2C617F3DFA400BF0F38 /* zoom_icon&48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zoom_icon&48.png"; path = "../../../../Downloads/cc/black/png/zoom_icon&48.png"; sourceTree = "<group>"; };
 		F5F5C2C817F3DFD800BF0F38 /* zoom_icon&24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zoom_icon&24.png"; path = "../../../../Downloads/cc/black/png/zoom_icon&24.png"; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 				F5F5C2CB17F3DFF400BF0F38 /* arrow_right_icon&32.png */,
 				F5F5C2C817F3DFD800BF0F38 /* zoom_icon&24.png */,
 				F5F5C2C617F3DFA400BF0F38 /* zoom_icon&48.png */,
-				F5F5C2BC17F3DA3700BF0F38 /* MainMenu.xib */,
+				F547EB1717F926A100A97657 /* MainMenu.xib */,
 				F5F5C2AB17F3DA3600BF0F38 /* Supporting Files */,
 			);
 			path = PdfReader;
@@ -191,7 +191,6 @@
 				F5F5C2AF17F3DA3600BF0F38 /* InfoPlist.strings in Resources */,
 				F5F5C2B517F3DA3700BF0F38 /* Credits.rtf in Resources */,
 				F5F5C2BB17F3DA3700BF0F38 /* ReaderDocument.xib in Resources */,
-				F5F5C2BE17F3DA3800BF0F38 /* MainMenu.xib in Resources */,
 				F5F5C2C717F3DFA400BF0F38 /* zoom_icon&48.png in Resources */,
 				F5F5C2C917F3DFD800BF0F38 /* zoom_icon&24.png in Resources */,
 				F5F5C2CC17F3DFF400BF0F38 /* arrow_left_icon&32.png in Resources */,
@@ -201,6 +200,7 @@
 				F59CC5F517F510C300671BC3 /* arrow_r_icon&48.png in Resources */,
 				F59CC5F717F518FF00671BC3 /* square_shape_icon&48.png in Resources */,
 				F594A9FB17F8E3E200CDBFDC /* icon.icns in Resources */,
+				F547EB1817F926A100A97657 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,14 +241,6 @@
 				F5F5C2BA17F3DA3700BF0F38 /* en */,
 			);
 			name = ReaderDocument.xib;
-			sourceTree = "<group>";
-		};
-		F5F5C2BC17F3DA3700BF0F38 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F5F5C2BD17F3DA3800BF0F38 /* en */,
-			);
-			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -9,12 +9,34 @@
 #import "ReaderDocument.h"
 #import <Quartz/Quartz.h>
 
+
 @implementation ReaderDocument
+
 PDFDocument *pdfDoc;
+
+
+
+- (void)applicationWillFinishLaunching:(NSNotification *)aNotification {
+    
+   [_splashScreen orderFront:self ];
+    
+}
+
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    
+    // hide the about box after one second.
+    [NSTimer scheduledTimerWithTimeInterval: 3.0f
+                                     target:self
+                                   selector:@selector(closeSplashBox:)
+                                   userInfo:self
+                                    repeats:false];
+    
+}
+
 
 - (id)init
 {
-    self = [super init];
+       self = [super init];
     if (self) {
         // Add your subclass-specific initialization here.
     }
@@ -169,9 +191,9 @@ PDFDocument *pdfDoc;
     }
 }
 
-//- (IBAction)goFullScreen:(id)sender {
-//    [_ReaderFrontPage [[[PdfView alloc]initWithFrame:self.view.bounds]autorelease];
-//}
+- (IBAction)goFullScreen:(id)sender {
+       [_ReaderFrontPage setFrame:[[NSScreen mainScreen] frame]];
+}
 
 
 
