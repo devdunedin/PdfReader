@@ -16,6 +16,7 @@
     NSString *searchValue;
     int selectionPos;
   //  IBOutlet NSWindow *_splashScreen;
+    int i;
     
 }
 
@@ -30,6 +31,7 @@
 
 @property (weak) IBOutlet NSToolbar *toolbar;
 
+@property (strong) IBOutlet NSWindow *pdfWindow;
 
 
 

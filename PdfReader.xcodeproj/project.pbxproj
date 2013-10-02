@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F547EB1817F926A100A97657 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F547EB1717F926A100A97657 /* MainMenu.xib */; };
+		F579D95717FBC8B5009BE7E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F579D95617FBC8B5009BE7E8 /* AppDelegate.m */; };
 		F58277B517F3E7D100A1951B /* arrow_two_head_icon&48.png in Resources */ = {isa = PBXBuildFile; fileRef = F58277B417F3E7D100A1951B /* arrow_two_head_icon&48.png */; };
 		F594A9FB17F8E3E200CDBFDC /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = F594A9FA17F8E3E200CDBFDC /* icon.icns */; };
 		F59CC5F417F510C300671BC3 /* arrow_l_icon&48.png in Resources */ = {isa = PBXBuildFile; fileRef = F59CC5F217F510C300671BC3 /* arrow_l_icon&48.png */; };
@@ -28,6 +29,8 @@
 
 /* Begin PBXFileReference section */
 		F547EB1717F926A100A97657 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainMenu.xib; path = ../../../../.Trash/MainMenu.xib; sourceTree = "<group>"; };
+		F579D95517FBC8B5009BE7E8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F579D95617FBC8B5009BE7E8 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F58277B417F3E7D100A1951B /* arrow_two_head_icon&48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow_two_head_icon&48.png"; path = "../../../../Downloads/cc/black/png/arrow_two_head_icon&48.png"; sourceTree = "<group>"; };
 		F594A9FA17F8E3E200CDBFDC /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		F59CC5F217F510C300671BC3 /* arrow_l_icon&48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow_l_icon&48.png"; path = "../../../../Downloads/cc/black/png/arrow_l_icon&48.png"; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 				F5F5C2C817F3DFD800BF0F38 /* zoom_icon&24.png */,
 				F5F5C2C617F3DFA400BF0F38 /* zoom_icon&48.png */,
 				F547EB1717F926A100A97657 /* MainMenu.xib */,
+				F579D95517FBC8B5009BE7E8 /* AppDelegate.h */,
+				F579D95617FBC8B5009BE7E8 /* AppDelegate.m */,
 				F5F5C2AB17F3DA3600BF0F38 /* Supporting Files */,
 			);
 			path = PdfReader;
@@ -213,6 +218,7 @@
 			files = (
 				F5F5C2B117F3DA3600BF0F38 /* main.m in Sources */,
 				F5F5C2B817F3DA3700BF0F38 /* ReaderDocument.m in Sources */,
+				F579D95717FBC8B5009BE7E8 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

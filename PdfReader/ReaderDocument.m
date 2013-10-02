@@ -50,10 +50,23 @@ PDFDocument *pdfDoc;
      selector:@selector(pageChanger:)
      name:PDFViewPageChangedNotification
      object:nil];
-}
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(fullViewEntry:)
+     name:NSWindowDidEnterFullScreenNotification
+     object:nil];
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(fullViewExit:)
+     name:NSWindowDidExitFullScreenNotification
+     object:nil];
+    
+     }
 
 - (void) awakeFromNib{
-    
+//    [_pdfWindow setCollectionBehavior:NSWindowCollectionBehaviorFullScreenAuxiliary];
     
 }
 
@@ -177,9 +190,22 @@ PDFDocument *pdfDoc;
 }
 
 - (IBAction)goFullScreen:(id)sender {
-     [self.toolbar setVisible:NO];
+    
+    [_pdfWindow toggleFullScreen:sender];
+    
+    //[_pdfWindow contentView] enterFullScreenMode:[NSScreen withOptions:];
+    [_toolbar setVisible:NO];
+    [_ReaderFrontPage setFrame:[[NSScreen mainScreen] frame]];
+   
     [self.PdfThumbnail setHidden:YES];
-       [_ReaderFrontPage setFrame:[[NSScreen mainScreen] frame]];
+
+
+    
+    
+    
+  
+   
+//    [_toolbar setVisible:NO];
    
 }
 
@@ -219,7 +245,28 @@ PDFDocument *pdfDoc;
 -(void)pageChanger:(NSNotification *)notification{
     
     [_pageNumber setIntegerValue:[[_ReaderFrontPage document] indexForPage:[_ReaderFrontPage currentPage]]+1];
+    if(i == 1){
+        [self.PdfThumbnail setHidden:YES];
+    }
 }
+
+-(void)fullViewEntry:(NSNotification *)notification{
+       
+         [self.toolbar setVisible:FALSE];
+     
+         [self.ReaderFrontPage setFrame:[[NSScreen mainScreen] frame]];
+    [self.PdfThumbnail setHidden:YES];
+  
+         
+     
+     }
+-(void)fullViewExit:(NSNotification *)notification{
+    
+    [_toolbar setVisible:YES];
+    [self.PdfThumbnail setHidden:NO];
+    
+}
+
 
 @end
 
