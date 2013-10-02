@@ -44,6 +44,7 @@ PDFDocument *pdfDoc;
     [_ReaderFrontPage setDocument:pdfDoc];
     [_PdfThumbnail setPDFView:_ReaderFrontPage];
     [_pageNumber setIntegerValue:[[_ReaderFrontPage document] indexForPage:[_ReaderFrontPage currentPage]]+1];
+    [self.ReaderFrontPage setFrame:[[NSScreen mainScreen] frame]];
 //        [_PdfThumbnail setHidden:YES];
     
     [[NSNotificationCenter defaultCenter]
@@ -228,27 +229,32 @@ PDFDocument *pdfDoc;
 -(void)pageChanger:(NSNotification *)notification{
     
     [_pageNumber setIntegerValue:[[_ReaderFrontPage document] indexForPage:[_ReaderFrontPage currentPage]]+1];
-    if([_pageNumber integerValue] > 0){
-        [self.PdfThumbnail setHidden:YES];
-    } 
+   
+    [self.ReaderFrontPage setFrame:[[NSScreen mainScreen] frame]];
+//        [self.PdfThumbnail setHidden:YES];
+   
 }
 
 -(void)fullViewEntry:(NSNotification *)notification{
-       
+//    if([self.pageNumber integerValue]>1){
+//          [self.PdfThumbnail setFrameSize: NSMakeSize(0.0, 0.0)];
+//    }
+               [self.PdfThumbnail setHidden:NO];
          [self.toolbar setVisible:FALSE];
-     
-         [self.ReaderFrontPage setFrame:[[NSScreen mainScreen] frame]];
-     if([_pageNumber integerValue] > 0){
-         [self.PdfThumbnail setHidden:YES];
+       
+    
+    [self.ReaderFrontPage setFrame:[[NSScreen mainScreen] frame]];
+  
          
-     }
+         
+   
          
      
      }
 -(void)fullViewExit:(NSNotification *)notification{
     
     [_toolbar setVisible:YES];
-    [self.PdfThumbnail setHidden:NO];
+   // [self.PdfThumbnail setHidden:NO];
     
 }
 
