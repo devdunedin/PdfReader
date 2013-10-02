@@ -21,7 +21,8 @@
     [_splashWindow makeKeyAndOrderFront:NSApp];
     sleep(3);
     [_splashWindow orderOut: _splashWindow];
-        
+    
+  
 }
 
 - (BOOL)applicationShouldOpenUntitledFile:(NSApplication *)sender {

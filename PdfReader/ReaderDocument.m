@@ -44,6 +44,7 @@ PDFDocument *pdfDoc;
     [_ReaderFrontPage setDocument:pdfDoc];
     [_PdfThumbnail setPDFView:_ReaderFrontPage];
     [_pageNumber setIntegerValue:[[_ReaderFrontPage document] indexForPage:[_ReaderFrontPage currentPage]]+1];
+//        [_PdfThumbnail setHidden:YES];
     
     [[NSNotificationCenter defaultCenter]
      addObserver:self
@@ -189,25 +190,7 @@ PDFDocument *pdfDoc;
     }
 }
 
-- (IBAction)goFullScreen:(id)sender {
-    
-    [_pdfWindow toggleFullScreen:sender];
-    
-    //[_pdfWindow contentView] enterFullScreenMode:[NSScreen withOptions:];
-    [_toolbar setVisible:NO];
-    [_ReaderFrontPage setFrame:[[NSScreen mainScreen] frame]];
-   
-    [self.PdfThumbnail setHidden:YES];
 
-
-    
-    
-    
-  
-   
-//    [_toolbar setVisible:NO];
-   
-}
 
 
 
@@ -245,9 +228,9 @@ PDFDocument *pdfDoc;
 -(void)pageChanger:(NSNotification *)notification{
     
     [_pageNumber setIntegerValue:[[_ReaderFrontPage document] indexForPage:[_ReaderFrontPage currentPage]]+1];
-    if(i == 1){
+    if([_pageNumber integerValue] > 0){
         [self.PdfThumbnail setHidden:YES];
-    }
+    } 
 }
 
 -(void)fullViewEntry:(NSNotification *)notification{
@@ -255,8 +238,10 @@ PDFDocument *pdfDoc;
          [self.toolbar setVisible:FALSE];
      
          [self.ReaderFrontPage setFrame:[[NSScreen mainScreen] frame]];
-    [self.PdfThumbnail setHidden:YES];
-  
+     if([_pageNumber integerValue] > 0){
+         [self.PdfThumbnail setHidden:YES];
+         
+     }
          
      
      }

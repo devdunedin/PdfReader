@@ -56,7 +56,7 @@
 - (IBAction)goHome:(id)sender;
 - (IBAction)goEnd:(id)sender;
 
-- (IBAction)goFullScreen:(id)sender;
+
 
 
 @end
