@@ -159,7 +159,7 @@ PDFDocument *pdfDoc;
     if ([[self.ReaderFrontPage document] isFinding]) {
         [[self.ReaderFrontPage document] cancelFindString];
     }
-    if (![[sender stringValue] isEqualToString:searchValue]) {
+    if (![[_searchStuff stringValue] isEqualToString:searchValue]) {
         searchResults = NULL;
     }
     if (searchResults == NULL) {
@@ -167,7 +167,7 @@ PDFDocument *pdfDoc;
         searchValue = [sender stringValue];
         selectionPos = 0;
     }
-    NSArray *selection = [[self.ReaderFrontPage document] findString: [sender stringValue] withOptions:NSCaseInsensitiveSearch];
+    NSArray *selection = [[self.ReaderFrontPage document] findString: [_searchStuff stringValue] withOptions:NSCaseInsensitiveSearch];
     
     if (selection.count != 0) {
         [self.ReaderFrontPage setCurrentSelection:selection[selectionPos]];
@@ -178,6 +178,33 @@ PDFDocument *pdfDoc;
     }
     
 }
+
+- (IBAction) doFindPrevious: (id) sender {
+    
+    
+    if ([[self.ReaderFrontPage document] isFinding]) {
+        [[self.ReaderFrontPage document] cancelFindString];
+    }
+    if (![[_searchStuff stringValue] isEqualToString:searchValue]) {
+        searchResults = NULL;
+    }
+    if (searchResults == NULL) {
+        searchResults = [NSMutableArray arrayWithCapacity: 10];
+        searchValue = [sender stringValue];
+        selectionPos = 0;
+    }
+    NSArray *selection = [[self.ReaderFrontPage document] findString: [_searchStuff stringValue] withOptions:NSBackwardsSearch];
+    
+    if (selection.count != 0) {
+        [self.ReaderFrontPage setCurrentSelection:selection[selectionPos]];
+        selectionPos++;
+        if (selectionPos > selection.count - 1) {
+            selectionPos = 0; }
+        [self.ReaderFrontPage scrollSelectionToVisible:sender];
+    }
+    
+}
+
 
 - (IBAction)goHome:(id)sender {
     if([_ReaderFrontPage canGoToFirstPage]){
@@ -236,14 +263,14 @@ PDFDocument *pdfDoc;
 }
 
 -(void)fullViewEntry:(NSNotification *)notification{
-//    if([self.pageNumber integerValue]>1){
-//          [self.PdfThumbnail setFrameSize: NSMakeSize(0.0, 0.0)];
-//    }
-               [self.PdfThumbnail setHidden:NO];
+    
+            
+      [self.ReaderFrontPage setFrame:[[NSScreen mainScreen] frame]];
+      [self.PdfThumbnail setHidden:YES];
          [self.toolbar setVisible:FALSE];
        
     
-    [self.ReaderFrontPage setFrame:[[NSScreen mainScreen] frame]];
+  
   
          
          
@@ -254,7 +281,7 @@ PDFDocument *pdfDoc;
 -(void)fullViewExit:(NSNotification *)notification{
     
     [_toolbar setVisible:YES];
-   // [self.PdfThumbnail setHidden:NO];
+    [self.PdfThumbnail setHidden:NO];
     
 }
 

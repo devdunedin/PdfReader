@@ -16,6 +16,4 @@
 
 @property (assign) IBOutlet NSWindow *splashWindow;
 
-@property (weak) IBOutlet IKImageView *splashScreen;
-
 @end

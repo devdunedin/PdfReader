@@ -33,6 +33,7 @@
 
 @property (strong) IBOutlet NSWindow *pdfWindow;
 
+@property (weak) IBOutlet NSSearchField *searchStuff;
 
 
 
@@ -55,7 +56,7 @@
 
 - (IBAction)goHome:(id)sender;
 - (IBAction)goEnd:(id)sender;
-
+- (IBAction) doFindPrevious: (id) sender;
 
 
 

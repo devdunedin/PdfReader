@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5165E6017FD0944000F32F0 /* splashscreen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5165E5F17FD0944000F32F0 /* splashscreen.jpg */; };
 		F547EB1817F926A100A97657 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F547EB1717F926A100A97657 /* MainMenu.xib */; };
 		F579D95717FBC8B5009BE7E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F579D95617FBC8B5009BE7E8 /* AppDelegate.m */; };
 		F58277B517F3E7D100A1951B /* arrow_two_head_icon&48.png in Resources */ = {isa = PBXBuildFile; fileRef = F58277B417F3E7D100A1951B /* arrow_two_head_icon&48.png */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F5165E5F17FD0944000F32F0 /* splashscreen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = splashscreen.jpg; path = PdfReader/splashscreen.jpg; sourceTree = "<group>"; };
 		F547EB1717F926A100A97657 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainMenu.xib; path = ../../../../.Trash/MainMenu.xib; sourceTree = "<group>"; };
 		F579D95517FBC8B5009BE7E8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F579D95617FBC8B5009BE7E8 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 		F5F5C29817F3DA3500BF0F38 = {
 			isa = PBXGroup;
 			children = (
+				F5165E5F17FD0944000F32F0 /* splashscreen.jpg */,
 				F594A9FA17F8E3E200CDBFDC /* icon.icns */,
 				F5F5C2C417F3DA6400BF0F38 /* Quartz.framework */,
 				F5F5C2AA17F3DA3500BF0F38 /* PdfReader */,
@@ -206,6 +209,7 @@
 				F59CC5F717F518FF00671BC3 /* square_shape_icon&48.png in Resources */,
 				F594A9FB17F8E3E200CDBFDC /* icon.icns in Resources */,
 				F547EB1817F926A100A97657 /* MainMenu.xib in Resources */,
+				F5165E6017FD0944000F32F0 /* splashscreen.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
