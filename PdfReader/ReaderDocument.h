@@ -22,7 +22,7 @@
 
 
 
-//@property (assign) IBOutlet NSWindow *window;
+//various outlets and actions
 @property (weak) IBOutlet PDFView *ReaderFrontPage;
 
 @property (weak) IBOutlet PDFThumbnailView *PdfThumbnail;

@@ -13,16 +13,11 @@
 @implementation ReaderDocument
 
 PDFDocument *pdfDoc;
-
-
-
-
-
 - (id)init
 {
-       self = [super init];
+    self = [super init];
     if (self) {
-        // Add your subclass-specific initialization here.
+        
     }
     return self;
 }
@@ -34,44 +29,51 @@ PDFDocument *pdfDoc;
     return @"ReaderDocument";
 }
 
+
 - (void)windowControllerDidLoadNib:(NSWindowController *)aController
 {
-      
+    
     [super windowControllerDidLoadNib:aController];
     // Add any code here that needs to be executed once the windowController has loaded the document's window.
     
-    
+    //setting up pdfview file
     [_ReaderFrontPage setDocument:pdfDoc];
     [_PdfThumbnail setPDFView:_ReaderFrontPage];
     [_pageNumber setIntegerValue:[[_ReaderFrontPage document] indexForPage:[_ReaderFrontPage currentPage]]+1];
     [self.ReaderFrontPage setFrame:[[NSScreen mainScreen] frame]];
-//        [_PdfThumbnail setHidden:YES];
     
+    
+    
+    //notification for page change
     [[NSNotificationCenter defaultCenter]
      addObserver:self
      selector:@selector(pageChanger:)
      name:PDFViewPageChangedNotification
      object:nil];
     
+    
+    //notification for entry to full screen
     [[NSNotificationCenter defaultCenter]
      addObserver:self
      selector:@selector(fullViewEntry:)
      name:NSWindowDidEnterFullScreenNotification
      object:nil];
     
+    //notification for exit from full screen
     [[NSNotificationCenter defaultCenter]
      addObserver:self
      selector:@selector(fullViewExit:)
      name:NSWindowDidExitFullScreenNotification
      object:nil];
     
-     }
+}
 
 - (void) awakeFromNib{
-//    [_pdfWindow setCollectionBehavior:NSWindowCollectionBehaviorFullScreenAuxiliary];
+    
     
 }
 
+//go back method to go to previous page
 - (IBAction)goBack:(id)sender {
     if([_ReaderFrontPage canGoToPreviousPage]){
         [_ReaderFrontPage goToPreviousPage:sender];
@@ -79,36 +81,63 @@ PDFDocument *pdfDoc;
     
 }
 
+//go front method to go to next page
 - (IBAction)goFront:(id)sender {
     if([_ReaderFrontPage canGoToNextPage]){
         [_ReaderFrontPage goToNextPage:sender];
     }
 }
+//Page you were before method to go to back
+- (IBAction)thePageYouWereBefore:(id)sender {
+    if([_ReaderFrontPage canGoBack]){
+        [_ReaderFrontPage goBack:sender];
+    }
+}
 
+//LastPageyouwere method to go to the last page you visisted or go next
+- (IBAction)theLastPageYouWere:(id)sender {
+    if([_ReaderFrontPage canGoForward]){
+        [_ReaderFrontPage goForward:sender];
+    }
+    
+}
+//zoom in method to zoom in
+- (IBAction)zoomIn:(id)sender {
+    
+    [_ReaderFrontPage zoomIn:sender];
+}
+
+//zoom out method to zoom out
 - (IBAction)zoomOut:(id)sender {
     
     [_ReaderFrontPage zoomOut:sender];
     
 }
 
+//zoom to fit method to zoom to fit the screen
 - (IBAction)zoomToFit:(id)sender {
     [_ReaderFrontPage setAutoScales:YES];
 }
 
 
 
+
+//single view method to show just a single page
 - (IBAction)singleView:(id)sender {
     [_ReaderFrontPage setDisplayMode:kPDFDisplaySinglePage];
 }
 
+//single continuous view method to show just a single continuous page
 - (IBAction)singleContinuousView:(id)sender {
     [_ReaderFrontPage setDisplayMode:kPDFDisplaySinglePageContinuous];
 }
 
+//double view method to show two pages
 - (IBAction)doubleView:(id)sender {
     [_ReaderFrontPage setDisplayMode:kPDFDisplayTwoUp];
 }
 
+//double continuous view method to show two continuous pages
 - (IBAction)doubleContinuousView:(id)sender {
     [_ReaderFrontPage setDisplayMode:kPDFDisplayTwoUpContinuous];
 }
@@ -118,32 +147,19 @@ PDFDocument *pdfDoc;
 
 
 
-- (IBAction)zoomIn:(id)sender {
-    
-    [_ReaderFrontPage zoomIn:sender];
-}
 
-- (IBAction)thePageYouWereBefore:(id)sender {
-    if([_ReaderFrontPage canGoBack]){
-        [_ReaderFrontPage goBack:sender];
-    }
-}
 
-- (IBAction)theLastPageYouWere:(id)sender {
-    if([_ReaderFrontPage canGoForward]){
-        [_ReaderFrontPage goForward:sender];
-    }
-    
-}
 
+
+//method calculates page number and assigns them
 -(void)controlTextDidEndEditing:(NSNotification *)notification{
-    int page_count = [pdfDoc pageCount];
+    long int page_count = [pdfDoc pageCount];
     
     if ([_pageNumber intValue] <= 0) {
         
     }
     
-    if(([_pageNumber intValue]-1 > 0)){
+    if(([_pageNumber intValue]-1 >= 0)){
         
         if([_pageNumber intValue]-1 < page_count){
             PDFPage *pageValueEntered = [[_ReaderFrontPage document] pageAtIndex:[_pageNumber intValue]-1];
@@ -153,6 +169,8 @@ PDFDocument *pdfDoc;
     }
     
 }
+
+//search next method
 - (IBAction) doFind: (id) sender {
     
     
@@ -179,6 +197,7 @@ PDFDocument *pdfDoc;
     
 }
 
+//search backwards method
 - (IBAction) doFindPrevious: (id) sender {
     
     
@@ -205,22 +224,19 @@ PDFDocument *pdfDoc;
     
 }
 
-
+//go to home page
 - (IBAction)goHome:(id)sender {
     if([_ReaderFrontPage canGoToFirstPage]){
         [_ReaderFrontPage goToFirstPage:sender];
     }
 }
 
+//go to last page
 - (IBAction)goEnd:(id)sender {
     if([_ReaderFrontPage canGoToLastPage]){
         [_ReaderFrontPage goToLastPage:sender];
     }
 }
-
-
-
-
 
 
 + (BOOL)autosavesInPlace
@@ -253,31 +269,27 @@ PDFDocument *pdfDoc;
     return YES;
 }
 
+//pagechanger selector for notification
 -(void)pageChanger:(NSNotification *)notification{
     
     [_pageNumber setIntegerValue:[[_ReaderFrontPage document] indexForPage:[_ReaderFrontPage currentPage]]+1];
-   
+    
     [self.ReaderFrontPage setFrame:[[NSScreen mainScreen] frame]];
-//        [self.PdfThumbnail setHidden:YES];
-   
+    
+    
 }
 
+//full screen entry selector for notification
 -(void)fullViewEntry:(NSNotification *)notification{
     
-            
-      [self.ReaderFrontPage setFrame:[[NSScreen mainScreen] frame]];
-      [self.PdfThumbnail setHidden:YES];
-         [self.toolbar setVisible:FALSE];
-       
     
-  
-  
-         
-         
-   
-         
-     
-     }
+    [self.ReaderFrontPage setFrame:[[NSScreen mainScreen] frame]];
+    [self.PdfThumbnail setHidden:YES];
+    [self.toolbar setVisible:FALSE];
+    
+}
+
+//full screen exit selector for notification
 -(void)fullViewExit:(NSNotification *)notification{
     
     [_toolbar setVisible:YES];

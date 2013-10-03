@@ -11,10 +11,11 @@
 @implementation AppDelegate
 
 -(void)applicationWillFinishLaunching:(NSNotification *)notification{
+    [_splashWindow setTitle:@"Pdf Viewer is Opening...."];
 }
 
 -(void) applicationDidFinishLaunching:(NSNotification *)notification {
-         [_splashWindow setTitle:@"Pdf Viewer is Opening...."];
+         
     [_splashWindow orderFrontRegardless];
      [_splashWindow makeKeyAndOrderFront:NSApp];
     
